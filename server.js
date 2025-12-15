@@ -44,8 +44,8 @@ app.get('/', (req, res) => {
 
 // GET /profiles?page=1&limit=10
 app.get('/profiles', (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
+  const page = req.query.page ?  parseInt(req.query.page) : 1;
+  const limit = req.query.limit ? parseInt(req.query.limit) : 10;
 
   const startIndex = (page - 1) * limit;
   const endIndex = startIndex + limit;
