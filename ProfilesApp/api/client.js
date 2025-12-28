@@ -1,0 +1,9 @@
+import axios from 'axios';
+
+// .env dosyasındaki IP adresini kullanır [cite: 134, 135]
+const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL;
+
+export const api = axios.create({
+  baseURL: API_BASE_URL,
+  timeout: 10000, // 10 saniye sonra vazgeç [cite: 136, 137, 478]
+});
